@@ -1,8 +1,9 @@
-import { Search, Bell, Settings, User, Menu } from "lucide-react";
+import { Search, Bell, Settings, User, Menu, GraduationCap } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
+import { Link } from "react-router-dom";
 
 interface DashboardHeaderProps {
   searchQuery: string;
@@ -42,6 +43,14 @@ export function DashboardHeader({ searchQuery, onSearchChange }: DashboardHeader
 
           {/* Right side - Actions and Profile */}
           <div className="flex items-center space-x-4">
+            {/* Learner View Link */}
+            <Link to="/learner">
+              <Button variant="outline" size="sm">
+                <GraduationCap className="w-4 h-4 mr-2" />
+                Learner View
+              </Button>
+            </Link>
+
             {/* Notifications */}
             <Button variant="ghost" size="icon" className="relative">
               <Bell className="w-5 h-5" />
